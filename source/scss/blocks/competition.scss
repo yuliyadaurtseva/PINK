@@ -1,0 +1,59 @@
+.competition__wrapper {
+  @include container;
+  padding-top: 45px;
+  padding-bottom: 2px;
+}
+
+.competition__text {
+  margin: 0;
+  @include text;
+}
+.competition__span {
+  display: none;
+}
+
+.competition__text br {
+  display: none;
+}
+
+@media (min-width: $width-tablet) {
+  .competition {
+    margin-bottom: 50px;
+  }
+
+  .competition__wrapper {
+    @include container-tablet;
+    padding-top: 92px;
+  }
+
+  .competition__text {
+    font-size: 18px;
+    line-height: 30px;   
+  }
+
+  .competition__span {
+    display: inline;
+  }
+
+  .competition__text br {
+    display: block;
+  }
+}
+
+@media (min-width: $width-desktop) {
+  .competition {
+    margin-bottom: 0;
+  }
+  .competition__wrapper {
+    @include container-desktop;
+    padding: 92px 80px 70px;  
+  }
+
+  .competition__span {
+    display: inline;
+  }
+
+  .competition__text br {
+    display: none;
+  }
+}

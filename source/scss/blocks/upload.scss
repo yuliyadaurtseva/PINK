@@ -1,0 +1,268 @@
+.upload__header {
+  @include container;
+  padding-top: 20px;
+  padding-bottom: 42px;
+  @include text;
+}
+
+.upload__content {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  @include container;
+  padding-top: 20px;
+  padding-bottom: 41px;
+}
+
+.upload__list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  @include list;
+  padding-top: 39px;
+  padding-bottom: 71px;
+}
+
+.upload__item {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 34px;
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.upload__tool {
+  padding: 0;
+  background-color: transparent;
+  border: none;
+}
+
+.upload__tool svg {
+  fill: $color-blue;
+  fill-opacity: 0.3;
+}
+
+.upload__tool--crop svg {
+  width: 44px;
+  height: 44px;
+}
+
+.upload__tool--fill svg {
+  width: 48px;
+  height: 43px;
+}
+
+.upload__tool--contrast svg {
+  width: 32px;
+  height: 32px;
+}
+
+.upload__tool--active svg {
+  fill: $color-red;
+  fill-opacity: 1;
+}
+
+.upload__tool:not(.upload__tool--active):hover svg,
+.upload__tool:not(.upload__tool--active):focus svg {
+  fill: $color-blue;
+  fill-opacity: 0.5;
+}
+
+.upload__range {
+  display: none;
+  position: absolute;
+  top: 83px;
+  left: -16px;
+  width: 240px;
+  height: 2px;
+  background-color: $color-blue;
+  &--active {
+    display: block;
+  }
+}
+
+.upload__toggle {
+  position: absolute;
+  top: -6px;
+  right: 33px;
+  width: 10px;
+  height: 10px;
+  border: 2px solid $color-red;
+  border-radius: 50%;
+  background-color: $color-grey2;
+  cursor: pointer;
+  &:active {
+    background-color: $color-red;
+  }
+}
+
+.upload__buttons {
+  margin: 0;
+  padding-top: 38px;
+  border-top: 1px solid $color-blue01;
+}
+
+.upload__button {
+  cursor: pointer;
+  &--post {
+    margin-bottom: 12px;
+  }
+}
+
+@media (min-width: $width-tablet) {
+  .upload__header {
+    @include container-tablet;
+    padding-top: 45px;
+    padding-bottom: 69px;
+    font-size: 18px;
+  }
+
+  .upload__content {
+    flex-direction: row;
+    justify-content: space-between;
+    @include container-tablet;
+    padding-top: 57px;
+    padding-bottom: 51px;
+  }
+
+  .upload__wrapper {
+    width: 300px;
+  }
+
+  .upload__list {
+    flex-direction: column;
+    align-items: stretch;
+    margin-bottom: 45px;
+    padding-top: 7px;
+    padding-bottom: 0;
+    padding-left: 27px;
+    border: none;
+  }
+
+  .upload__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 0;
+    margin-bottom: 24px;
+    padding-right: 18px;
+    padding-bottom: 23px;
+    border-bottom: 1px solid $color-blue01;
+  }
+ 
+  .upload__toggle {
+    top: 6px;
+    &--crop {
+      right: 60px;
+    }
+    &--fill {
+      right: 181px;
+    }
+    &--contrast {
+      top: 2px;
+      right: 110px;
+    }
+  }
+
+  .upload__tool svg {
+    fill: $color-red;
+    fill-opacity: 1;
+  }
+    
+  .upload__range {
+    display: block;
+    position: static;
+    width: 202px;
+  }
+
+  .upload__buttons {
+    padding-top: 0;
+    border-color: transparent;
+  }
+
+  .upload__button {
+    margin-left: 27px;
+    &--post {
+      margin-bottom: 24px;
+    }
+  }
+}
+
+@media (min-width: $width-tablet) and (max-width: 959px) {
+  .upload__tool--crop svg {
+    width: 22px;
+    height: 22px;
+  }
+  
+  .upload__tool--fill svg {
+    width: 24px;
+    height: 22px;
+  }
+
+  .upload__tool--contrast svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+@media (min-width: $width-desktop) {
+  .upload__header {
+    @include container-desktop;
+    padding-top: 5px;
+    padding-bottom: 66px;
+  }
+
+  .upload__content {
+    width: 940px;
+    padding-left: 70px;
+    padding-right: 70px;
+    padding-bottom: 54px;
+  }
+
+  .upload__wrapper {
+    width: 410px;
+  }
+
+  .upload__list {
+    margin-top: -3px;
+    margin-bottom: 141px;
+    padding: 0;
+  }
+
+  .upload__item {
+    margin-bottom: 14px;
+    padding-right: 30px;
+    padding-bottom: 11px;
+  }
+
+  .upload__range {
+    width: 288px;
+  }
+
+  .upload__toggle {
+    top: 16px;
+    &--crop {
+      right: 233px;
+    }
+    &--fill {
+      right: 57px;
+    }
+    &--contrast {
+      top: 10px;
+      right: 144px;
+    }
+  }
+ 
+  .upload__buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .upload__button {
+    margin: 0;
+  }
+}

@@ -1,0 +1,131 @@
+@mixin container {
+  width: $width-mobile;
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  box-sizing: border-box;
+}
+
+@mixin container-tablet {
+  width: $width-tablet;
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  box-sizing: border-box;
+}
+
+@mixin container-desktop {
+  width: $width-desktop;
+  margin: 0 auto;
+  padding-left: 10px;
+  padding-right: 10px;
+  box-sizing: border-box;
+}
+
+@mixin list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@mixin indent-none {
+  margin: 0;
+  padding: 0;
+}
+
+@mixin background {
+  background-repeat: no-repeat;
+  background-position: 0 0;
+}
+
+@mixin title {
+  font-size: 18px;
+  color: #000000;
+  font-weight: 700;
+  text-align: $align;
+}
+
+@mixin text {
+  font-size: 14px;
+  line-height: 30px;
+  color: $color-blue;
+  font-weight: 400;
+  text-align: $align;
+}
+
+@mixin label {
+  position: relative;
+  font-size: 14px;
+  line-height: 30px;
+  color: $color-red;
+  text-transform: uppercase;
+  text-align: left;
+}
+
+@mixin input-text {
+  width: 280px;
+  box-sizing: border-box;
+  font-size: 18px;
+  line-height: 30px;
+  color: $color-blue;
+  cursor: pointer;
+  &::placeholder {
+    color: inherit;
+  }
+  &:hover {
+    border-color: $color-blue;
+  }
+  &:focus {
+    border-color: $color-red;
+  }
+}
+
+@mixin label-before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 35px;
+  height: 35px;
+  border: 2px solid #e5e5e5;
+  background-color: #ffffff;
+  cursor: pointer;
+}
+
+@mixin label-check {
+  padding-top: 4px;
+  padding-bottom: 5px;
+  padding-left: 69px;
+  text-transform: none;
+  &:hover::before,
+  &:focus::before {
+    border: 2px solid $color-blue;
+  }
+  &:active::before {
+    border: 2px solid $color-red;
+  }
+}
+
+@mixin border-form {
+  border: $border-input;
+  border-radius: $radius;
+}
+
+@mixin triangle {
+  background-color: $color-grey2;
+  background-image: url("../img/bg-triangle-white.svg");
+  background-repeat: no-repeat;
+  background-position: center 0;  
+}
+
+@mixin table-td {
+  width: 278px;
+  min-width: 278px;
+  padding: 15px 22px 14px;
+  box-sizing: border-box;
+  border: 2px solid $color-grey1;
+}
+
+@mixin transform {
+  transition: transform .6s ease;
+}

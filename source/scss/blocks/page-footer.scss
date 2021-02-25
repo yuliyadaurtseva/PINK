@@ -1,0 +1,135 @@
+.page-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @include container;
+  margin-top: 54px;
+  padding-bottom: 36px;
+  &--form {
+    margin-top: 55px;
+    padding-bottom: 34px;
+  }
+  &--photo {
+    margin-top: 40px;
+  }
+}
+
+.page-footer__logo {
+  display: block;
+  width: 147px;
+  height: 40px;
+  margin-bottom: 40px;
+}
+
+.page-footer__glasses {
+  fill: $color-red;
+}
+
+.page-footer__pink {
+  fill: $color-blue;
+}
+
+.page-footer__glasses-crop {
+  display: none;
+}
+
+.page-footer__stars {
+  display: none;
+}
+
+.page-footer__logo[href]:hover .page-footer__pink,
+.page-footer__logo[href]:focus .page-footer__pink {
+  fill: $color-red;
+}
+
+.page-footer__logo[href]:active .page-footer__pink {
+  fill: $color-blue;
+}
+
+.page-footer__logo[href]:active .page-footer__svg {
+  fill-opacity: 0.3;
+}
+
+.page-footer__social {
+  margin-bottom: 39px;
+}
+
+.page-footer__copyright {
+  display: flex;
+  justify-content: center;
+}
+
+.page-footer__text {
+  display: block;
+  margin-right: 13px;
+  @include text;
+}
+
+.page-footer__html-academy {
+  fill: $color-red;
+}
+
+.page-footer__link:hover .page-footer__html-academy,
+.page-footer__link:focus .page-footer__html-academy {
+  fill: $color-blue;
+}
+
+.page-footer__link:active .page-footer__html-academy {
+  fill-opacity: 0.3;
+}
+
+@media (max-width: $width-tablet) {
+  .page-footer--index {
+    display: none;
+  }
+}
+
+@media (min-width: $width-tablet) {
+  .page-footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    @include container-tablet;
+    padding-top: 39px;
+  }
+ .page-footer__logo {
+    margin-bottom: 0;
+  }
+  .page-footer__social {
+    margin-bottom: 0;
+  }
+}
+
+@media (min-width: $width-desktop) {
+  .page-footer {
+    @include container-desktop;
+    padding-top: 75px;
+    &--photo {
+      padding-top: 102px;
+      padding-bottom: 72px;
+    }
+  }
+
+  .page-footer__text {
+    font-size: 18px;
+  }
+
+  .page-footer__glasses {
+    display: none;
+  }
+
+  .page-footer__glasses-crop {
+    display: block;
+    fill: $color-red;
+  }
+   
+  .page-footer__stars {
+    display: block;
+    fill: $color-blue;
+  }
+
+  .page-footer__star-red {
+    fill: $color-red;
+  }
+}

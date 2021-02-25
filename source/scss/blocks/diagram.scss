@@ -1,0 +1,117 @@
+.diagram {
+  display: none;
+}
+
+@media (min-width: $width-tablet) {
+  .diagram {
+    position: relative;
+    display: block;
+    @include container-tablet;
+    padding: 96px 30px 24px 329px;
+    text-align: left;
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 21px;
+      width: 238px;
+      height: 276px;
+      background: url(../img/diagram-timer.svg) no-repeat 0 0/100%;
+    }
+    &::after {
+      content: "24";
+      position: absolute;
+      bottom: 19px;
+      left: 39px;
+      z-index: 10;
+      width: 202px;
+      height: 202px;
+      font-size: 96px;
+      line-height: 190px;
+      color: $color-red;
+      font-weight: 700;
+      text-align: center;
+      background: url(../img/diagram-fill.svg) no-repeat 0 0/100%;
+    }
+  }
+
+  .diagram__title {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 30px;
+    line-height: 36px;
+    color: #000000;
+  }
+
+  .diagram__text {
+    margin: 0;
+    margin-bottom: 7px;
+    @include text;
+      line-height: 24px;
+      text-align: left;
+  }
+
+  .diagram__text br:first-child {
+    display: none;
+}
+
+  .diagram__link {
+    @include text;
+    color: $color-red;
+    &:hover,
+    &:focus {
+      color: $color-blue;
+    }
+    &:focus {
+      color: $color-blue03;
+    }
+  }
+}
+
+@media (min-width: $width-desktop) {
+  .diagram {
+    @include container-desktop;
+    padding: 114px 50px 114px 376px;
+    &::before {
+      bottom: 67px;
+      left: 11px;
+      width: 298px;
+      height: 345px;
+    }
+    &::after {
+      bottom: 90px;
+      left: 33px;
+      width: 253px;
+      height: 253px;
+      font-size: 120px;
+      line-height: 240px;
+    }
+  }
+
+  .diagram__title {
+    margin-bottom: 21px;
+  }
+
+  .diagram__title br {
+    display: none;
+  }
+
+  .diagram__text {
+    margin-bottom: 30px;
+    font-size: 18px;
+    line-height: 30px;
+  }
+
+  .diagram__text br {
+    &:first-child {
+      display: inline;
+    }
+    &:nth-child(2) {
+      display: none;
+    }
+  }
+    
+  .diagram__link {
+    font-size: 18px;
+  }
+}

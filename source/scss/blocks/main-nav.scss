@@ -1,0 +1,66 @@
+.main-nav {
+  position: relative;
+}
+
+.main-nav__toggle {
+  position: absolute;
+  top: -45px;
+  right: 20px;
+  z-index: 5;
+  padding: 0;
+  border: none;   
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.main-nav__svg {
+  display: none;
+  fill: #ffffff;
+  &:hover,
+  &:focus {
+    fill: $color-red;
+  }
+  &:active {
+    fill: $color-red;
+    fill-opacity: 0.3;
+  }
+}
+
+@media (min-width: $width-tablet) {
+  .main-nav__toggle {
+    top: -66px;
+  }
+}
+
+@media (max-width: $width-before-desktop) {
+  .main-nav--opened .site-list {
+    display: block;
+  }
+
+  .main-nav--closed .site-list {
+    display: none;
+  }
+
+  .main-nav--opened .main-nav__svg--cross,
+  .main-nav--closed .main-nav__svg--humburger {
+    display: block;
+  }
+
+  .main-nav--nojs .site-list {
+    display: block;
+  }
+
+  .main-nav--nojs .main-nav__toggle {
+    display: none;
+  }
+}
+
+@media (min-width: $width-desktop) {
+  .main-nav {
+    width: 623px;
+  }
+  
+  .main-nav__toggle {
+    display: none;
+  }
+}

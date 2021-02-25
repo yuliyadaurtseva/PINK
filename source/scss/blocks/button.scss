@@ -1,0 +1,104 @@
+.button {
+  display: block;
+  width: 280px;
+  padding: 14px 0 17px;
+  box-sizing: border-box;
+  font-size: 18px;
+  line-height: 18px;
+  color: #ffffff;
+  font-weight: 700;
+  border-radius: 28px;
+  &--download {
+    text-decoration: none;
+    border: 3px solid #ffffff;
+    &:hover,
+    &:focus {
+      color: $color-red;
+      filter: drop-shadow(0px 5px 3.5px rgba(1,1,1,0.75));
+      background-color: #ffffff;
+    }
+    &:active {
+      color: rgba(210, 40, 86, 0.3);
+    }
+  }
+  &--green {
+    padding-bottom: 15px;
+    line-height: 30px;
+    text-transform: uppercase;
+    background-color: $color-green1;
+    border: 2px solid $color-green1;
+    border-radius: $radius;
+    &:hover,
+    &:focus {
+      border-color: $color-green2;
+      background-color: $color-green2;
+    }
+    &:active {
+      border-color: $color-green2;
+      color: rgba(255, 255, 255, 0.3);
+      background-color: $color-green2;
+    }
+    &:disabled {
+      border-color: $color-grey1;
+      background-color: $color-grey1;
+    }    
+  }
+  &--post {
+    border: 3px solid $color-red;
+    background-color: #ffffff;
+    color: $color-red;
+    &:hover,
+    &:focus {
+      color: #ffffff;
+      background-color: $color-red;
+    }
+    &:active {
+      color: rgba(255, 255, 255, 0.3);
+      background-color: $color-red;
+    }
+  }
+  &--cancel {
+    border: 3px solid $color-blue;
+    color: $color-blue;
+    background-color: #ffffff;
+    opacity: 0.1;
+    &:hover,
+    &:focus {
+      opacity: 0.3;
+    }
+    &:active {
+      color: #ffffff;
+      background-color: $color-blue;
+      opacity: 0.3;
+    }
+  }
+}
+
+@media (min-width: $width-tablet) {
+  .button {
+    width: 300px;
+    &--post,
+    &--cancel {
+      width: 260px;
+    }
+    &--close,
+    &--ok {
+      margin: 0 auto;
+    }
+  }
+}
+
+@media (min-width: $width-desktop) {
+  .button {
+    &--download {
+      font-size: 21px;
+    }
+    &--post,
+    &--cancel {
+      width: 183px;
+    }
+    &--close {
+      width: 456px;
+    }
+  }
+}

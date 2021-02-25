@@ -1,0 +1,189 @@
+.price {
+  position: relative;
+  padding-top: 133px;
+  padding-bottom: 99px;
+}
+
+.price__table {
+  border-collapse: collapse;
+}
+
+.price__title {
+  @include table-td;
+  padding: 14px 5px 15px;
+  line-height: 30px;
+  color: #ffffff;
+  text-transform: uppercase;
+  border-top: 2px solid $color-blue;
+  border-bottom: 2px solid $color-blue;
+  background-color: $color-blue;
+  &:nth-child(2) {
+    border-left: 2px solid $color-blue;
+  }
+  &:last-child {
+    border-right: 2px solid $color-blue;
+  }
+  &--hit {
+    position: relative;
+    &::before {
+      content: "ХИТ";
+      position: absolute;
+      top: 3px;
+      left: 1px;
+      z-index: 10;
+      width: 74px;
+      height: 73px;
+      transform: rotate(-45deg);
+      font-size: 14px;
+      line-height: 30px;
+      color: #ffffff;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      top: -3px;
+      left: -1px;
+      width: 74px;
+      height: 73px;
+      background: url("../img/hit.svg") no-repeat;
+    }
+  }
+}
+
+.price__name {
+  margin: 0;
+  margin-bottom: 2px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.price__usd {
+  font-size: 24px;
+  font-weight: 300;
+}
+
+.price__option {
+  position: relative;
+  @include table-td;
+  font-size: 14px;
+  line-height: 30px;
+  color: $color-blue;
+  text-transform: uppercase;
+  text-align: left;
+  &--first {
+    display: none;
+  }
+
+  &--check::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 16px;
+    width: 32px;
+    height: 22px;
+    margin-top: -11px;
+    background: url("../img/check.svg") no-repeat 0 0;
+  }
+
+  &--cross::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 19px;
+    width: 27px;
+    height: 26px;
+    margin-top: -13px;
+    background: url("../img/cross.svg") no-repeat 0 0;
+  }
+}
+
+@media (min-width: $width-tablet) {
+  .price {
+    padding-top: 109px;
+    padding-bottom: 68px;
+  }
+
+  .price__option {
+    width: 155px;
+    min-width: 155px;
+    padding: 5px 15px;
+    text-transform: none;
+    &--first {
+      display: table-cell;
+    }
+    &--check::after {
+      left: 50%;
+      margin-left: -16px;
+    }
+    &--cross::after {
+      left: 50%;
+      margin-left: -13.5px;
+    }    
+  }
+
+  .price__title {
+    width: 155px;
+    min-width: 155px;
+    &--hit {
+      &::before {
+        top: -5px;
+        left: -2px;
+      }
+      &::after {
+        left: 0;
+        width: 61px;
+        height: 61px;
+        background-image: url("../img/hit-tablet.svg");
+      }
+    }
+  }
+
+  .price__value {
+    font-size: 0;
+  }
+}
+
+@media (min-width: $width-tablet) and (max-width: $width-before-desktop) {
+  .price__title {
+    padding: 10px 5px 7px;
+    &--hit {
+      &::before {
+        top: -5px;
+        left: -2px;
+      }
+      &::after {
+        left: 0;
+        width: 61px;
+        height: 61px;
+        background-image: url("../img/hit-tablet.svg");
+      }
+    }
+  }
+    
+  .price__name {
+    margin-bottom: -3px;
+    font-size: 16px;
+  }
+
+  .price__usd {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: $width-desktop) {
+  .price {
+    padding-top: 143px;
+    padding-bottom: 95px;
+  }
+    
+  .price__title,
+  .price__option {
+    width: 235px;
+    min-width: 235px;
+  }
+
+  .price__option {
+    padding: 11px 23px;
+    font-size: 18px;
+  }
+}
